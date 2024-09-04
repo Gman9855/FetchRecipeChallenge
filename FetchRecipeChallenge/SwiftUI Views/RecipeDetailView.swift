@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct RecipeDetailView: View {
-    var viewModel: RecipeDetailViewModel
+    @Bindable var viewModel: RecipeDetailViewModel
+    @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
         GeometryReader { geometry in
@@ -59,6 +60,16 @@ struct RecipeDetailView: View {
                         }.padding([.leading, .bottom, .trailing])
                     }
                 }
+            }
+        }
+        .alert(viewModel.errorText, isPresented: $viewModel.showErrorText) {
+            Button("Retry") {
+                Task {
+                    await viewModel.fetchFullRecipe()
+                }
+            }
+            Button("Dismiss") {
+                presentationMode.wrappedValue.dismiss()
             }
         }
         .task {

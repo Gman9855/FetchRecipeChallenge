@@ -44,6 +44,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FD068FC12C88E0B600848CAB /* SwiftUI Views */ = {
+			isa = PBXGroup;
+			children = (
+				FD7AD4C12C877CB600B2F34A /* ContentView.swift */,
+				FD7AD4D52C87A12E00B2F34A /* RecipeDetailView.swift */,
+			);
+			path = "SwiftUI Views";
+			sourceTree = "<group>";
+		};
+		FD068FC22C88E0CE00848CAB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FD7AD4D12C8782B600B2F34A /* Recipe.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		FD7AD4B32C877CB600B2F34A = {
 			isa = PBXGroup;
 			children = (
@@ -64,11 +81,10 @@
 			isa = PBXGroup;
 			children = (
 				FD7AD4BF2C877CB600B2F34A /* FetchRecipeChallengeApp.swift */,
-				FD7AD4C12C877CB600B2F34A /* ContentView.swift */,
-				FD7AD4D52C87A12E00B2F34A /* RecipeDetailView.swift */,
+				FD068FC12C88E0B600848CAB /* SwiftUI Views */,
 				FD7AD4D72C87B27A00B2F34A /* View Models */,
 				FD7AD4DA2C87B5A700B2F34A /* Services */,
-				FD7AD4D12C8782B600B2F34A /* Recipe.swift */,
+				FD068FC22C88E0CE00848CAB /* Model */,
 				FD7AD4C32C877CB800B2F34A /* Assets.xcassets */,
 				FD7AD4C52C877CB800B2F34A /* Preview Content */,
 			);
@@ -95,8 +111,8 @@
 		FD7AD4DA2C87B5A700B2F34A /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				FD7AD4CD2C877E3800B2F34A /* NetworkService.swift */,
 				FD7AD4CF2C87814500B2F34A /* RecipeService.swift */,
+				FD7AD4CD2C877E3800B2F34A /* NetworkService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";

@@ -23,13 +23,19 @@ struct ContentView: View {
                             ProgressView()
                                 .frame(width: 70, height: 70)
                         })
-                            
                         Text(recipe.name)
                             .font(.headline)
                     }
                 }
             }
             .listRowSpacing(8)
+            .alert(viewModel.errorText, isPresented: $viewModel.showErrorText) {
+                Button("Retry") {
+                    Task {
+                        await viewModel.fetchRecipes()
+                    }
+                }
+            }
             .task {
                 await viewModel.fetchRecipes()
             }

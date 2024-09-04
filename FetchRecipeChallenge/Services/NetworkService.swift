@@ -13,6 +13,24 @@ enum NetworkError: Error {
     case decodingFailed(Error)
     case invalidResponse
     case unknown(Error)
+    case noData
+    
+    var errorMessage: String {
+        switch self {
+        case .invalidURL:
+            return "Invalid URL"
+        case .decodingFailed(let error):
+            return "Decoding failed with error: \(error.localizedDescription)"
+        case .invalidResponse:
+            return "Invalid server response"
+        case .unknown(let unknownError):
+            return "Unknown error occurred: \(unknownError.localizedDescription)"
+        case .requestFailed:
+            return "Request failed"
+        case .noData:
+            return "No data found"
+        }
+    }
 }
 
 protocol NetworkServiceProtocol {
